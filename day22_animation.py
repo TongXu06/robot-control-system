@@ -119,4 +119,13 @@ ani = FuncAnimation(
     repeat=False
 )
 
+from matplotlib.animation import PillowWriter
+
+ani.save(
+    "day22_robot_animation.gif",
+    writer=PillowWriter(fps=20)
+)
+
+print("GIF saved successfully!")
+
 plt.show()
