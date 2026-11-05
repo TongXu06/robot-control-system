@@ -231,7 +231,7 @@ ani = FuncAnimation(
     update,
     frames=len(joint_trajectory),
     interval=50,
-    blit=True,
+    blit=False,
     repeat=False
 )
 
