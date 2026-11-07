@@ -31,3 +31,11 @@ Future improvements:
 - Robot motion visualization
 - Joint trajectory planning
 - Robot simulation
+
+
+## Robot Arm Animation
+
+This project demonstrates quintic trajectory planning,
+forward kinematics, and 2D robot arm visualization.
+
+![Robot Arm Animation](day22_robot_animation.gif)
