@@ -25,10 +25,14 @@ setup(
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [
-            'joint_publisher = robot_state_demo.joint_publisher:main',
-            'joint_subscriber = robot_state_demo.joint_subscriber:main',
-        ],
-    },
+    'console_scripts': [
+        'joint_publisher = robot_state_demo.joint_publisher:main',
+        'joint_subscriber = robot_state_demo.joint_subscriber:main',
+        'joint_service = robot_state_demo.joint_service:main',
+        'joint_client = robot_state_demo.joint_client:main',
+        'move_action_server = robot_state_demo.move_action_server:main',
+        'move_action_client = robot_state_demo.move_action_client:main',
+    ],
+},
 )
 
