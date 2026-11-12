@@ -39,6 +39,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
     "console_scripts": [
+        "joint_state_bridge = robot_state_demo.joint_state_bridge:main",
         "joint_publisher = robot_state_demo.joint_publisher:main",
         "joint_subscriber = robot_state_demo.joint_subscriber:main",
         "joint_service = robot_state_demo.joint_service:main",
