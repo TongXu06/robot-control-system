@@ -43,6 +43,7 @@ setup(
     tests_require=["pytest"],
     entry_points={
         "console_scripts": [
+            "day39_cartesian_line = robot_state_demo.day39_cartesian_line:main",
             "day38_trajectory_publisher = robot_state_demo.day38_trajectory_publisher:main",
             "joint_publisher = robot_state_demo.joint_publisher:main",
             "joint_subscriber = robot_state_demo.joint_subscriber:main",
