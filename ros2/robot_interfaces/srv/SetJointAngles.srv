@@ -1,0 +1,6 @@
+
+float64 shoulder
+float64 elbow
+---
+bool accepted
+string message

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<robot name="two_link_robot_arm">
+
+  <!-- Base link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.025"/>
+      <geometry>
+        <box size="0.10 0.10 0.05"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.025"/>
+      <geometry>
+        <box size="0.10 0.10 0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.025"/>
+      <mass value="1.0"/>
+      <inertia
+        ixx="0.00104167"
+        ixy="0"
+        ixz="0"
+        iyy="0.00104167"
+        iyz="0"
+        izz="0.00166667"/>
+    </inertial>
+  </link>
+
+  <!-- Shoulder joint -->
+  <joint name="shoulder_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="upper_arm_link"/>
+    <origin xyz="0 0 0.06"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.5707963"
+           effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Upper arm -->
+  <link name="upper_arm_link">
+    <visual>
+      <origin xyz="0.06 0 0"/>
+      <geometry>
+        <box size="0.12 0.028 0.028"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.4 0.9 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0.06 0 0"/>
+      <geometry>
+        <box size="0.12 0.028 0.028"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.06 0 0"/>
+      <mass value="0.5"/>
+      <inertia
+        ixx="0.000065333"
+        ixy="0"
+        ixz="0"
+        iyy="0.000632667"
+        iyz="0"
+        izz="0.000632667"/>
+    </inertial>
+  </link>
+
+  <!-- Elbow joint -->
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin xyz="0.12 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5707963" upper="1.5707963"
+           effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Forearm -->
+  <link name="forearm_link">
+    <visual>
+      <origin xyz="0.05 0 0"/>
+      <geometry>
+        <box size="0.10 0.024 0.024"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.7 0.4 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0.05 0 0"/>
+      <geometry>
+        <box size="0.10 0.024 0.024"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.05 0 0"/>
+      <mass value="0.3"/>
+      <inertia
+        ixx="0.0000288"
+        ixy="0"
+        ixz="0"
+        iyy="0.0002644"
+        iyz="0"
+        izz="0.0002644"/>
+    </inertial>
+  </link>
+
+  <!-- Tool joint -->
+  <joint name="tool_joint" type="fixed">
+    <parent link="forearm_link"/>
+    <child link="tool_link"/>
+    <origin xyz="0.10 0 0"/>
+  </joint>
+
+  <!-- Tool -->
+  <link name="tool_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.012"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.2 0.2 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.012"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.05"/>
+      <inertia
+        ixx="0.00000288"
+        ixy="0"
+        ixz="0"
+        iyy="0.00000288"
+        iyz="0"
+        izz="0.00000288"/>
+    </inertial>
+  </link>
+
+</robot>
+

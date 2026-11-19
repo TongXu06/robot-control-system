@@ -1,0 +1,12 @@
+float64 shoulder
+float64 elbow
+float64 duration
+---
+bool success
+float64 final_shoulder
+float64 final_elbow
+string message
+---
+float64 current_shoulder
+float64 current_elbow
+float64 progress

@@ -1,0 +1,6 @@
+
+robot_state_publisher_demo:
+  ros__parameters:
+    shoulder_deg: 30.0
+    elbow_deg: 45.0
+    publish_rate: 2.0

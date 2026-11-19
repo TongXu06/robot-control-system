@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: robot_state_demo
+    relative_path: urdf/day37_controlled_arm.urdf
+  srdf:
+    relative_path: config/day37_robot_arm.srdf
+  package_settings:
+    author_name: Tong Xu
+    author_email: 1712915849@qq.com
+    generated_timestamp: 1794808938

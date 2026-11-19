@@ -1,0 +1,38 @@
+{
+  "home": {
+    "panda_joint1": -0.0,
+    "panda_joint2": -0.785,
+    "panda_joint3": 0.0,
+    "panda_joint4": -2.356,
+    "panda_joint5": 0.0,
+    "panda_joint6": 1.571,
+    "panda_joint7": 0.785
+  },
+  "grasp": {
+    "panda_joint1": 0.080227,
+    "panda_joint2": 0.373503,
+    "panda_joint3": -0.058665,
+    "panda_joint4": -2.534412,
+    "panda_joint5": 0.134666,
+    "panda_joint6": 2.894234,
+    "panda_joint7": 0.679617
+  },
+  "test_position": {
+    "panda_joint1": 0.04983,
+    "panda_joint2": -0.77656,
+    "panda_joint3": 0.005757,
+    "panda_joint4": -2.356338,
+    "panda_joint5": -0.004064,
+    "panda_joint6": 1.573607,
+    "panda_joint7": 0.783198
+  },
+  "pregrasp": {
+    "panda_joint1": 0.030205,
+    "panda_joint2": 0.155682,
+    "panda_joint3": -0.060079,
+    "panda_joint4": -2.580391,
+    "panda_joint5": -0.068865,
+    "panda_joint6": 2.747976,
+    "panda_joint7": 0.634257
+  }
+}
