@@ -1,122 +1,144 @@
-# Robot Control System | ROS 2 & Panda Manipulation
+Robot Control System — ROS 2, MoveIt 2 & Panda Manipulation
 
-A 45-day robotics learning and simulation project covering robot
-kinematics, trajectory planning, ROS 2 communication, motion planning,
-and robotic grasping.
+A 45-day robotics development project | Python · ROS 2 · Gazebo · MoveIt 2
 
-## Project Overview
+A personal robotics project exploring robot kinematics, trajectory planning, control algorithms, ROS 2 communication, motion planning, and robotic manipulation.
 
-This project explores the fundamentals of robotic arm control and
-simulation, progressing from Python-based kinematics to a 7-DOF
-Franka Emika Panda robotic arm in Gazebo and MoveIt 2.
+Project Highlights
 
-The final demonstration involved manually specifying grasp poses
-in RViz, planning and executing arm trajectories using MoveIt 2,
-and successfully grasping and lifting a cube in Gazebo.
+* Implemented forward and inverse kinematics for robotic arm control.
+* Developed cubic and quintic trajectory planning methods.
+* Explored Jacobian-based velocity control and singularity handling.
+* Built ROS 2 applications using topics, services, and actions.
+* Integrated a 7-DOF Franka Emika Panda robot with Gazebo and MoveIt 2.
+* Successfully demonstrated simulated cube grasping and lifting with a two-finger gripper.
 
-## Technology Stack
+Demo — Panda Robot Grasping
 
-- Python 3
-- NumPy
-- ROS 2 Jazzy
-- Ubuntu 24.04 / WSL2
-- Gazebo Harmonic
-- MoveIt 2
-- RViz2
-- ros2_control
-- URDF
+Final result: The Panda robot successfully approached a simulated cube, closed its gripper around the object, and lifted it from the ground in Gazebo.
 
-## Implemented Features
+View the demonstration video and screenshots
 
-- Forward and inverse kinematics
-- Jacobian-based robot velocity control
-- Trajectory generation and interpolation
-- Robot joint-state publishing and monitoring
-- ROS 2 topics, services, and actions
-- Robot motion planning with MoveIt 2
-- Panda robotic arm simulation in Gazebo
-- Two-finger gripper position control
-- Cube grasping and lifting demonstration
+The demonstration uses manually selected target poses in RViz, with motion trajectories planned by MoveIt 2 and executed through ROS 2 controllers.
 
-## Repository Structure
+Scope: This is a motion-planned, manually guided grasping demonstration, not a fully autonomous pick-and-place system.
 
-- `ros2/robot_state_demo/` — ROS 2 communication and robot states
-- `ros2/robot_interfaces/` — Custom ROS 2 interfaces
-- `ros2/day40_arm_moveit_config/` — MoveIt 2 configuration
-- `ros2/day42_panda_obstacles/` — Obstacle management
-- `ros2/day43_panda_gazebo/` — Gazebo simulation code
-- `ros2/day44_panda_gripper/` — Gripper and simulation configuration
-- `ros2/day45_panda_auto/` — Experimental grasp planning scripts
+Technology Stack
 
-## Final Demonstration
+Category	Technologies
+Programming	Python 3, NumPy
+Robot Framework	ROS 2 Jazzy
+Motion Planning	MoveIt 2
+Simulation	Gazebo Harmonic
+Visualization	RViz2
+Robot Control	ros2_control
+Robot Description	URDF, SDF
+Development Environment	Ubuntu 24.04, WSL2
+Version Control	Git, GitHub
 
-The Panda robot successfully performed the following steps:
+Technical Modules
 
-1. Planned a collision-free approach trajectory in RViz.
-2. Executed the motion in Gazebo through ROS 2 controllers.
-3. Positioned the gripper around a simulated cube.
-4. Closed the gripper to grasp the cube.
-5. Lifted the cube from the ground.
+1. Robot Kinematics
 
-The final grasping demonstration was performed with manually selected
-target poses. Fully autonomous pick-and-place is not claimed.
+Implemented fundamental robot kinematics, including forward kinematics, inverse kinematics, Jacobian matrices, and end-effector velocity control.
 
-## Environment
+2. Trajectory Planning
 
-- Ubuntu 24.04 on WSL2
-- ROS 2 Jazzy
-- Gazebo Harmonic
-- MoveIt 2
+Explored joint-space and Cartesian-space trajectory generation, cubic and quintic interpolation, and trajectory visualization.
 
-## Author
+3. Robot Control and Safety
+
+Developed joint position control, motion history recording, joint-limit checks, and velocity-control experiments.
+
+4. ROS 2 Communication
+
+Built ROS 2 applications using publisher/subscriber communication, services, actions, custom interfaces, and robot joint-state monitoring.
+
+5. Gazebo and MoveIt 2 Integration
+
+Configured the Panda robot model, controllers, gripper, and simulated environment. Used MoveIt 2 to generate and execute collision-checked robot trajectories.
+
+6. Grasping Demonstration
+
+Completed a simulated grasp-and-lift sequence involving:
+
+1. Moving the robotic arm above the target cube.
+2. Aligning the two-finger gripper.
+3. Planning and executing the approach trajectory.
+4. Closing the gripper around the cube.
+5. Lifting the grasped object in Gazebo.
+
+Repository Structure
+
+robot-control-system/
+├── README.md
+├── day18_safety.py
+├── day19_trajectory.py
+├── day20_smooth_trajectory.py
+├── day21_quintic_trajectory.py
+├── day22_forward_kinenatics.py
+├── day23_inverse_kinematics.py
+├── day24_cartesian_trajectory.py
+├── day25_jacobian.py
+├── day26_velocity_control.py
+├── day27_singularity.py
+├── day28_robot_control_v1.py
+├── main.py
+├── visualize.py
+├── ros2/
+│   ├── robot_state_demo/
+│   ├── robot_interfaces/
+│   ├── day40_arm_moveit_config/
+│   ├── day42_panda_obstacles/
+│   ├── day43_panda_gazebo/
+│   ├── day44_panda_gripper/
+│   └── day45_panda_auto/
+├── ros2_projects/
+└── media/
+
+The day45_panda_auto folder contains experimental motion-planning scripts. It does not represent a verified end-to-end autonomous grasping pipeline.
+
+Running the Project
+
+Python Control Simulation
+
+Install Python 3 and run:
+
+python main.py
+
+ROS 2 Simulation Environment
+
+The ROS 2 portion was developed using Ubuntu 24.04, ROS 2 Jazzy, Gazebo Harmonic, and MoveIt 2.
+
+For the ROS 2 packages, copy the relevant packages into a ROS 2 workspace, install their dependencies, and build using colcon.
+
+The Panda demonstration also uses the URDF, controller configuration, Gazebo world, and MoveIt configuration provided in this repository.
+
+Some launch and simulation scripts contain workspace-specific paths and may need adjustment before running on another computer.
+
+Project Outcomes
+
+This project provided practical experience in:
+
+* Mathematical foundations of robot manipulation.
+* Python-based robotics algorithm implementation.
+* ROS 2 software architecture and communication.
+* Robot motion planning and simulation.
+* Integration and debugging of robotic controllers.
+* Simulated object grasping and lifting.
+
+Limitations and Future Improvements
+
+Current limitations include manual grasp-target selection, experimental automation scripts, and environment-specific configuration.
+
+Potential future work includes vision-based object localization, automated grasp pose generation, complete pick-and-place execution, and more reproducible launch configurations.
+
+Author
 
 Tong Xu
 
+Robotics and Embodied AI Enthusiast
+
 GitHub: https://github.com/TongXu06
 
-
----
-
-# Earlier Python Robot Control Project
-
-
-# Robot Control System
-
-A Python-based robot joint control simulation project.
-
-## Features
-
-- Control robot joint angles
-- Check joint safety limits
-- Display robot status
-- Record movement history
-- Reset robot positions
-
-## Technologies
-
-- Python
-- Object-Oriented Programming (OOP)
-- Git and GitHub
-
-## How to Run
-
-```bash
-python main.py
-```
-
-## Project Goal
-
-This project is part of my learning journey in robotics and embodied AI.
-
-Future improvements:
-- Robot motion visualization
-- Joint trajectory planning
-- Robot simulation
-
-
-## Robot Arm Animation
-
-This project demonstrates quintic trajectory planning,
-forward kinematics, and 2D robot arm visualization.
-
-![Robot Arm Animation](day22_robot_animation.gif)
+Project Repository: https://github.com/TongXu06/robot-control-system
